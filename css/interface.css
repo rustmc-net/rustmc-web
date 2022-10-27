@@ -3,12 +3,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  color: rgb(28, 28, 28);
-  background-color: #FCFCFD;
+  color: var(--defaultFontColor);
+  background-color: var(--backgroundColor);
 }
 .navbar {
   height: 100vh;
   width: 250px;
-  background-color: rgb(66,204,238);
-  background: linear-gradient(0deg, rgba(66,204,238,1) 0%, rgba(105,245,167,1) 100%);
+  background: var(--colorFirst);
+  background: linear-gradient(0deg, var(--colorFirst) 0%, var(--colorSecond) 100%);
 }

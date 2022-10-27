@@ -1,10 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-:root{
-  --colorFirst: rgba(66,204,238,1);
-  --colorSecond: rgba(105,245,167,1);
-  --backgroundColor: rgb(252, 252, 253);
-  --defaultFontColor: rgb(28, 28, 28);
-}
 body {
   margin: 0;
   padding: 0;

@@ -1,0 +1,6 @@
+:root{
+    --colorFirst: rgba(66,204,238,1);
+    --colorSecond: rgba(105,245,167,1);
+    --backgroundColor: rgb(252, 252, 253);
+    --defaultFontColor: rgb(28, 28, 28);
+}
