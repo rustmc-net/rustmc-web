@@ -8,18 +8,17 @@ body {
   background-color: var(--backgroundColor);
 }
 .navbar {
-  height: 100vh;
+  height: 100%;
   width: 250px;
   background: var(--backgroundDarkColor);
-  box-shadow: 10px 0 10px -2px rgb(31, 31, 31);
+  box-shadow: 10px 0 10px -2px var(--shadowColor);
 }
 .navbar img {
   pointer-events: none;
 }
 .navbar table{
-    /*color: #99aab5;
-    font-family: 'Roboto Mono', monospace;*/
     margin-left: 20px;
+    margin-top: 25px;
 }
 .navbar hr {
   width: 190px;
@@ -28,19 +27,42 @@ body {
   margin-left: -5px;
   background: rgb(161, 166, 170);
 }
-.navbar a {
+.navbar_button{
   margin-left: -155px;
   color: rgb(161, 166, 170);
   text-decoration: none;
 }
-.navbar a:hover {
+.navbar_button:hover {
   transition: 500ms linear;
-  color: rgb(204, 208, 211);
+  color: var(--hoverColor);
   text-decoration: underline;
 }
 .heading {
   font-weight: bold;
 }
-.navbar table {
-  margin-top: 25px;
+.navbar_profile_name {
+  margin-top: 15px;
+}
+.navbar_profile_uuid::before {
+  content: "\a";
+  white-space: pre;
+}
+.navbar_profile_uuid {
+  color: rgb(161, 166, 170);
+  font-family: 'Roboto Mono', monospace;
+  font-size: x-small;
+  line-height: 80%;
+}
+.navbar_profile_buttons a{
+  display: inline-block;
+  margin-top: -15px;
+}
+.navbar_profile_button_first a{
+  margin-left: 40px;
+  margin-right: 20px;
+}
+@media only screen and (min-height: 970px) {
+  .navbar {
+    height: 100vh;
+  }
 }

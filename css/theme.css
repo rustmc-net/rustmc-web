@@ -5,6 +5,8 @@
     --backgroundColor: rgb(252, 252, 253);
     --defaultFontColor: rgb(28, 28, 28);
     --iconInvert: 0;
+    --shadowColor: #8f8d8d;
+    --hoverColor: rgb(28, 28, 28);
 }
 .icon {
     filter: invert(var(--iconInvert));

@@ -6,6 +6,8 @@ if(json.dark) {
     root.style.setProperty('--backgroundDarkColor', 'rgb(35,39,42)');
     root.style.setProperty('--defaultFontColor', '#FCFCFD');
     root.style.setProperty('--iconInvert', '1');
+    root.style.setProperty('--shadowColor', 'rgb(31, 31, 31)');
+    root.style.setProperty('--hoverColor', 'rgb(204, 208, 211)');
 }
     
 root.style.setProperty('--colorFirst', json.colorFirst);
