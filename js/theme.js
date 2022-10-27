@@ -3,7 +3,9 @@ var root = document.querySelector(':root');
 
 if(json.dark) {
     root.style.setProperty('--backgroundColor', 'rgb(44,47,51)');
+    root.style.setProperty('--backgroundDarkColor', 'rgb(35,39,42)');
     root.style.setProperty('--defaultFontColor', '#FCFCFD');
+    root.style.setProperty('--iconInvert', '1');
 }
     
 root.style.setProperty('--colorFirst', json.colorFirst);

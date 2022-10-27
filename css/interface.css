@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 body {
   margin: 0;
   padding: 0;
@@ -9,6 +10,37 @@ body {
 .navbar {
   height: 100vh;
   width: 250px;
-  background: var(--colorFirst);
-  background: linear-gradient(0deg, var(--colorFirst) 0%, var(--colorSecond) 100%);
+  background: var(--backgroundDarkColor);
+  box-shadow: 10px 0 10px -2px rgb(31, 31, 31);
+}
+.navbar img {
+  pointer-events: none;
+}
+.navbar table{
+    /*color: #99aab5;
+    font-family: 'Roboto Mono', monospace;*/
+    margin-left: 20px;
+}
+.navbar hr {
+  width: 190px;
+  height: 1px;
+  border: none;
+  margin-left: -5px;
+  background: rgb(161, 166, 170);
+}
+.navbar a {
+  margin-left: -155px;
+  color: rgb(161, 166, 170);
+  text-decoration: none;
+}
+.navbar a:hover {
+  transition: 500ms linear;
+  color: rgb(204, 208, 211);
+  text-decoration: underline;
+}
+.heading {
+  font-weight: bold;
+}
+.navbar table {
+  margin-top: 25px;
 }
