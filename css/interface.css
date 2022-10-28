@@ -50,12 +50,40 @@ body {
   content: "\a";
   white-space: pre;
 }
-.navbar_profile_uuid {
-  color: rgb(161, 166, 170);
+
+
+.navbar_profile_rank_admin {
+  background: rgb(255, 95, 95);
+  border-radius: 5px;
+  color: #FCFCFD;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 15px;
+  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  width: 80px;
   font-family: 'Roboto Mono', monospace;
   font-size: x-small;
-  line-height: 80%;
 }
+.navbar_profile_rank_unkown {
+  background: rgb(161, 166, 170);
+  border-radius: 5px;
+  color: #FCFCFD;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 15px;
+  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  width: 70px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: x-small;
+}
+
+
 .navbar_profile_buttons a{
   display: inline-block;
   margin-top: -15px;
@@ -95,6 +123,12 @@ body {
   font-size: x-small;
   margin-left: -33px;
   margin-top: -12px;
+}
+.logout:hover {
+  filter: drop-shadow(0px 0px 6px rgba(255, 95, 95, 0.9));
+}
+.navbar_profile_settings:hover {
+  filter: drop-shadow(0px 0px 6px rgba(241, 241, 241, 0.9));
 }
 
 @media only screen and (min-height: 970px) {

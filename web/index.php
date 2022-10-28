@@ -71,13 +71,33 @@ if(!isset($_SESSION["username"])){
               $uuid = $row["UUID"];
               echo "<img class=\"navbar_profile_skin\" src=\"https://crafatar.com/avatars/$uuid\" width=\"50px\" alt=\"Minecraft Player Skin\">";
             ?></td>
-            <td><p class="navbar_profile_name"><?php echo($_SESSION["username"]); ?><span class="navbar_profile_uuid">ec561538-f3fd-461d</span></p></td> <!-- Remove 18 from the end of theUUID -->
+            <td><p class="navbar_profile_name">
+              <?php
+                echo($_SESSION["username"]);
+                echo('<br>');
+
+                require("../mysql/MySQL.php");
+                $stmt = $mysql->prepare("SELECT RANK FROM accounts WHERE LOWER(USERNAME) = LOWER(:username)");
+                $stmt->bindParam(":username", $_SESSION["username"]);
+                $stmt->execute();
+                $row = $stmt->fetch();
+                $rank = $row["RANK"];
+
+                switch(strtolower($rank)){
+                  case "admin":
+                    echo('<span class="navbar_profile_rank_admin">Administrator</span>');
+                    break;
+                  default:
+                  echo('<span class="navbar_profile_rank_unkown">Unbekannt</span>');
+                }
+              ?>
+              </p></td> <!-- Remove 18 from the end of theUUID -->
           </tr>
         </table>
         <table class="navbar_profile_buttons">
           <tr>
-            <td class="navbar_profile_button_first"><a href=""><img src="../assets/img/icons/menu.png" width="40px" class="icon"></a><span class="notify_profile">1</span></td>
-            <td><a href="logout.php"><img src="../assets/img/icons/logout.png" width="40px" class="icon"></a></td>
+            <td class="navbar_profile_button_first"><a href="" class="navbar_profile_settings"><img src="../assets/img/icons/menu.png" width="40px" class="icon"></a><span class="notify_profile">1</span></td>
+            <td><a href="logout.php" class="logout"><img src="../assets/img/icons/logout.png" width="40px" class="icon"></a></td>
           </tr>
         </table>
       </div>
