@@ -64,6 +64,39 @@ body {
   margin-left: 40px;
   margin-right: 20px;
 }
+.notify {
+  background: rgb(255, 95, 95);
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #FCFCFD;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 15px;
+  margin-right: 5px;
+  text-align: center;
+  width: 15px;
+  font-size: x-small;
+  margin-left: 7px;
+}
+.notify_profile {
+  position: absolute;
+  background: rgb(255, 95, 95);
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #FCFCFD;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 15px;
+  margin-right: 5px;
+  text-align: center;
+  width: 15px;
+  font-size: x-small;
+  margin-left: -33px;
+  margin-top: -12px;
+}
+
 @media only screen and (min-height: 970px) {
   .navbar {
     height: 100vh;

@@ -26,8 +26,13 @@ if(!isset($_SESSION["username"])){
         <tr><td><img src="../assets/img/icons/calendar.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Kalender</a></td></tr>
         <tr><td><img src="../assets/img/icons/news.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Neuigkeiten</a></td></tr>
       </table>
-      <?php 
-        $perms = array("dashboard.navbar.support","dashboard.navbar.development","dashboard.navbar.administration");
+      <?php
+        require("../mysql/MySQL.php");
+        $stmt = $mysql->prepare("SELECT PERMISSIONS FROM accounts WHERE LOWER(USERNAME) = LOWER(:username)");
+        $stmt->bindParam(":username", $_SESSION["username"]);
+        $stmt->execute();
+        $row = $stmt->fetch();
+        $perms = explode(",",$row["PERMISSIONS"]);//array("dashboard.navbar.support","dashboard.navbar.development","dashboard.navbar.administration");
         if(in_array("dashboard.navbar.support", $perms) || in_array("*", $perms)) {
           echo '<table>
           <tr><td class="heading">Support</td></tr>
@@ -49,7 +54,7 @@ if(!isset($_SESSION["username"])){
           <tr><td class="heading">Administration</td></tr>
           <tr><th><hr></th></tr>
           <tr><td><img src="../assets/img/icons/palette.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Theme</a></td></tr>
-          <tr><td><img src="../assets/img/icons/manage_accounts.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Accounts</a></td></tr>
+          <tr><td><img src="../assets/img/icons/manage_accounts.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Accounts</a><span class="notify">1</span></td></tr>
           <tr><td><img src="../assets/img/icons/settings.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Einstellungen</a></td></tr>
         </table>';
         }
@@ -71,7 +76,7 @@ if(!isset($_SESSION["username"])){
         </table>
         <table class="navbar_profile_buttons">
           <tr>
-            <td class="navbar_profile_button_first"><a href=""><img src="../assets/img/icons/menu.png" width="40px" class="icon"></a></td>
+            <td class="navbar_profile_button_first"><a href=""><img src="../assets/img/icons/menu.png" width="40px" class="icon"></a><span class="notify_profile">1</span></td>
             <td><a href="logout.php"><img src="../assets/img/icons/logout.png" width="40px" class="icon"></a></td>
           </tr>
         </table>
