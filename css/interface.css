@@ -40,6 +40,9 @@ body {
 .heading {
   font-weight: bold;
 }
+.navbar_profile {
+  bottom: 30px;
+}
 .navbar_profile_name {
   margin-top: 15px;
 }
@@ -64,5 +67,8 @@ body {
 @media only screen and (min-height: 970px) {
   .navbar {
     height: 100vh;
+  }
+  .navbar_profile {
+    position: absolute;
   }
 }

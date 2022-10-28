@@ -31,12 +31,22 @@
         <br>
         <p class="error"><?php
             if(isset($_POST["submit"])){
-              if($_POST["username"] != "Tester" || $_POST["password"] != "Test"){
+              require("mysql/MySQL.php");
+              $stmt = $mysql->prepare("SELECT * FROM accounts WHERE LOWER(USERNAME) = LOWER(:username)");
+              $stmt->bindParam(":username", $_POST["username"]);
+              $stmt->execute();
+              $count = $stmt->rowCount();
+              if($count == 1) {
+                $row = $stmt->fetch();
+                if(password_verify($_POST["password"], $row["PASSWORD"])) {
+                  session_start();
+                  $_SESSION["username"] = $row["USERNAME"];
+                  header("Location: web");
+                } else {
+                  echo "Benutzername oder Passwort ist falsch!";
+                }
+              } else {
                 echo "Benutzername oder Passwort ist falsch!";
-              }else{
-                session_start();
-                $_SESSION["username"] = "Tester";
-                header("Location: web");
               }
             }
              ?></p>
