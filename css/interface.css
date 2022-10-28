@@ -50,8 +50,13 @@ body {
   content: "\a";
   white-space: pre;
 }
-
-
+.content_outside {
+  position: absolute;
+  margin-left: 300px;
+}
+.content {
+  position: relative;
+}
 .navbar_profile_rank_admin {
   background: rgb(255, 95, 95);
   border-radius: 5px;

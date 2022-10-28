@@ -17,6 +17,11 @@ if(!isset($_SESSION["username"])){
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
   </head>
   <body>
+    <div class="content_outside">
+        <div class="content">
+            <p>test</p>
+        </div>
+    </div>
     <div class="navbar">
       <center><img src="../assets/img/logo.png" alt="logo" width="150px"></center>
       <table>
@@ -54,7 +59,7 @@ if(!isset($_SESSION["username"])){
           <tr><td class="heading">Administration</td></tr>
           <tr><th><hr></th></tr>
           <tr><td><img src="../assets/img/icons/palette.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Theme</a></td></tr>
-          <tr><td><img src="../assets/img/icons/manage_accounts.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Accounts</a><span class="notify">1</span></td></tr>
+          <tr><td><img src="../assets/img/icons/manage_accounts.png" width="30px" height="30px" class="icon"></td><td><a href="admin/accounts.php" class="navbar_button">Accounts</a><span class="notify">1</span></td></tr>
           <tr><td><img src="../assets/img/icons/settings.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Einstellungen</a></td></tr>
         </table>';
         }
@@ -75,23 +80,21 @@ if(!isset($_SESSION["username"])){
               <?php
                 echo($_SESSION["username"]);
                 echo('<br>');
-
                 require("../mysql/MySQL.php");
                 $stmt = $mysql->prepare("SELECT RANK FROM accounts WHERE LOWER(USERNAME) = LOWER(:username)");
                 $stmt->bindParam(":username", $_SESSION["username"]);
                 $stmt->execute();
                 $row = $stmt->fetch();
                 $rank = $row["RANK"];
-
-                switch(strtolower($rank)){
+                switch(strtolower($rank)) {
                   case "admin":
-                    echo('<span class="navbar_profile_rank_admin">Administrator</span>');
+                    echo '<span class="navbar_profile_rank_admin">Administrator</span>';
                     break;
                   default:
-                  echo('<span class="navbar_profile_rank_unkown">Unbekannt</span>');
+                  echo '<span class="navbar_profile_rank_unkown">Unbekannt</span>';
                 }
               ?>
-              </p></td> <!-- Remove 18 from the end of theUUID -->
+              </p></td>
           </tr>
         </table>
         <table class="navbar_profile_buttons">
