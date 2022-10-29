@@ -43,16 +43,22 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
                         foreach($result as $row) {
                             $name = $row["USERNAME"];
                             $rank = $row["RANK"];
-                            $final_rank = "";
-                            switch(strtolower($rank)) {
-                                case "admin":
-                                    $final_rank = '<span class="navbar_profile_rank_admin">Administrator</span>';
-                                    break;
-                                default:
-                                    $final_rank = '<span class="navbar_profile_rank_unkown">Unbekannt</span>';
-                              }
-                              //TODO: Ranks sync wih database
                             $uuid = $row["UUID"];
+                            $final_rank = "";
+                            
+                            $stmt = $mysql->prepare("SELECT * FROM ranks WHERE ID = :id");
+                            $stmt->bindParam(":id", $rank);
+                            $stmt->execute();
+                            $count = $stmt->rowCount();
+                            if($count == 1) {
+                              $row = $stmt->fetch();
+                              $css = $row["CSS"];
+                              $rank_name = $row["NAME"];
+                              $final_rank = "<span class=\"$css\">$rank_name</span>";
+                            } else {
+                              $final_rank = '<span class="navbar_profile_rank_unkown">Unbekannt</span>';
+                            }
+                            
                             echo "<tr class=\"account\">
                             <td><img src=\"https://crafatar.com/avatars/$uuid\" width=\"50px\" alt=\"Minecraft Player Skin\"></td>
                             <td class=\"account_username\">Benutzernamen</td>
@@ -134,12 +140,18 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
                 $stmt->execute();
                 $row = $stmt->fetch();
                 $rank = $row["RANK"];
-                switch(strtolower($rank)) {
-                    case "admin":
-                        echo '<span class="navbar_profile_rank_admin">Administrator</span>';
-                        break;
-                    default:
-                        echo '<span class="navbar_profile_rank_unkown">Unbekannt</span>';
+
+                $stmt = $mysql->prepare("SELECT * FROM ranks WHERE ID = :id");
+                $stmt->bindParam(":id", $rank);
+                $stmt->execute();
+                $count = $stmt->rowCount();
+                if($count == 1) {
+                  $row = $stmt->fetch();
+                  $css = $row["CSS"];
+                  $rank_name = $row["NAME"];
+                  echo "<span class=\"$css\">$rank_name</span>";
+                } else {
+                  echo '<span class="navbar_profile_rank_unkown">Unbekannt</span>';
                 }
               ?>
               </p></td>
@@ -148,7 +160,7 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
         <table class="navbar_profile_buttons">
           <tr>
             <td class="navbar_profile_button_first"><a href="" class="navbar_profile_settings"><img src="../../assets/img/icons/menu.png" width="40px" class="icon"></a><span class="notify_profile">1</span></td>
-            <td><a href="logout.php" class="logout"><img src="../../assets/img/icons/logout.png" width="40px" class="icon"></a></td>
+            <td><a href="../logout.php" class="logout"><img src="../../assets/img/icons/logout.png" width="40px" class="icon"></a></td>
           </tr>
         </table>
       </div>

@@ -86,11 +86,17 @@ if(!isset($_SESSION["username"])){
                 $stmt->execute();
                 $row = $stmt->fetch();
                 $rank = $row["RANK"];
-                switch(strtolower($rank)) {
-                  case "admin":
-                    echo '<span class="navbar_profile_rank_admin">Administrator</span>';
-                    break;
-                  default:
+                
+                $stmt = $mysql->prepare("SELECT * FROM ranks WHERE ID = :id");
+                $stmt->bindParam(":id", $rank);
+                $stmt->execute();
+                $count = $stmt->rowCount();
+                if($count == 1) {
+                  $row = $stmt->fetch();
+                  $css = $row["CSS"];
+                  $rank_name = $row["NAME"];
+                  echo "<span class=\"$css\">$rank_name</span>";
+                } else {
                   echo '<span class="navbar_profile_rank_unkown">Unbekannt</span>';
                 }
               ?>
