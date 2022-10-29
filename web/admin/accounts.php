@@ -21,6 +21,7 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
     <meta charset="utf-8">
     <title>RustMC - Network</title>
     <script type="text/javascript" src="../../js/theme.js"></script>
+    <script type="text/javascript" src="../../js/accounts.js"></script>
     <link rel="stylesheet" href="../../css/theme.css">
     <link rel="stylesheet" href="../../css/interface.css">
     <link rel="stylesheet" href="../../css/dashboard/accounts.css">
@@ -35,7 +36,7 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
             </div>
             <div class="accounts">
                 <table>
-                    <?php 
+                    <!--<php 
                         require("../../mysql/MySQL.php");
                         $stmt = $mysql->prepare("SELECT * FROM accounts");
                         $stmt->execute();
@@ -44,6 +45,7 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
                             $name = $row["USERNAME"];
                             $rank = $row["RANK"];
                             $uuid = $row["UUID"];
+                            $edit_permission_value = $row["PERMISSIONS"];
                             $final_rank = "";
                             
                             $stmt = $mysql->prepare("SELECT * FROM ranks WHERE ID = :id");
@@ -58,18 +60,41 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
                             } else {
                               $final_rank = '<span class="navbar_profile_rank_unkown">Unbekannt</span>';
                             }
-                            
-                            echo "<tr class=\"account\">
+
+                            $edit_username = $name . "_username";
+                            $edit_rank = $name . "_rank";
+                            $edit_permission = $name . "_permission";
+                            $edit_save = $name . "_save";
+
+                            echo "<tr class=\"account\" id=\"$name\">
                             <td><img src=\"https://crafatar.com/avatars/$uuid\" width=\"50px\" alt=\"Minecraft Player Skin\"></td>
                             <td class=\"account_username\">Benutzernamen</td>
                             <td class=\"account_username_value\">$name</td>
                             <td class=\"account_rank\">Rang</td>
                             <td class=\"account_rank_value\">$final_rank</td>
-                            <td><a href=\"#edit\" class=\"account_edit\"><img class=\"icon\" src=\"../../assets/img/icons/edit.png\" width=\"30px\"></a></td>
+                            <td><a onclick=\"openEdit($name);\" class=\"account_edit\"><img class=\"icon\" src=\"../../assets/img/icons/edit.png\" width=\"30px\"></a></td>
                             <td><a href=\"#delete\" class=\"account_delete\"><img class=\"icon\" src=\"../../assets/img/icons/delete.png\" width=\"30px\"></a></td>
+                            <td class=\"account_edit_username\" id=\"$edit_username\">Benuzernamen<input type=\"text\" class=\"account_edit_username_input\" value=\"$name\"></td>
+                            <td class=\"account_edit_rank\" id=\"$edit_rank\">Rang<input type=\"text\" class=\"account_edit_rank_input\" value=\"$rank_name\"></td>
+                            <td class=\"account_edit_permission\" id=\"$edit_permission\">Rechte<textarea class=\"account_edit_permission_input\">$edit_permission_value</textarea></td>
+                            <td><a href=\"\" class=\"account_edit_save\" id=\"$edit_save\"><img class=\"icon\" src=\"../../assets/img/icons/save.png\" width=\"30px\"></a></td>
                         </tr>";
+                            echo "<script type=\"text/javascript\"> prepareAccountCSS($name); </script>";
                         }
-                    ?>
+                    ?>-->
+                    <tr class="account" id="name">
+                            <td><img src="https://crafatar.com/avatars/aab27bba-5f56-45bc-8b02-d912df5317cd" width="50px" alt="Minecraft Player Skin"></td>
+                            <td class="account_username">Benutzernamen</td>
+                            <td class="account_username_value">RedCrewTV</td>
+                            <td class="account_rank">Rang</td>
+                            <td class="account_rank_value"><span class="navbar_profile_rank_unkown">Unbekannt</span></td>
+                            <td><a onclick="openEdit($name);" class="account_edit"><img class="icon" src="../../assets/img/icons/edit.png" width="30px"></a></td>
+                            <td><a href="#delete" class="account_delete"><img class="icon" src="../../assets/img/icons/delete.png" width="30px"></a></td>
+                            <td class="account_edit_username" id="$edit_username">Benuzernamen<input type="text" class="account_edit_username_input" value="$name"></td>
+                            <td class="account_edit_rank" id="$edit_rank">Rang<input type="text" class="account_edit_rank_input" value="Administrator"></td>
+                            <td class="account_edit_permission" id="$edit_permission">Rechte<textarea class="account_edit_permission_input">$perms</textarea></td>
+                            <td><a href="" class="account_edit_save" id="$edit_save"><img class="icon" src="../../assets/img/icons/save.png" width="30px"></a></td>
+                    </tr>
                 </div>
                 </table>
             </div>

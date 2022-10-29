@@ -77,6 +77,101 @@
 .account_delete:hover {
     filter: drop-shadow(0px 0px 6px rgba(241, 241, 241, 0.9));
 }
+img {
+    pointer-events: none;
+}
+#name {
+    height: 400px;
+    transition: 350ms linear;
+}
+.account_edit_username_input {
+    position: absolute;
+    color: var(--defaultFontColor);
+    background: var(--backgroundDarkColor);
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(161, 166, 170);
+    border-color: rgb(161, 166, 170);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-left: -110px;
+    margin-top: 30px;
+    font-size: medium;
+    width: 150px;
+}
+.account_edit_username_input:focus {
+    outline: none;
+}
+.account_edit_username {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 70px;
+}
+.account_edit_rank_input {
+    position: absolute;
+    background: var(--backgroundDarkColor);
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(161, 166, 170);
+    border-color: rgb(161, 166, 170);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-left: -40px;
+    margin-top: 30px;
+    font-size: medium;
+    width: 150px;
+}
+.account_edit_rank_input:focus {
+    outline: none;
+}
+.account_edit_rank {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 270px;
+}
+.account_edit_permission {
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 70px;
+}
+.account_edit_permission_input {
+    position: absolute;
+    background: var(--backgroundColor);
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(161, 166, 170);
+    margin-left: -50px;
+    margin-top: 30px;
+    width: 50em;
+    height: 12em;
+    resize: none;
+    transition: 350ms linear;
+}
+.account_edit_permission_input:focus {
+    outline: none;
+}
+.account_edit_save {
+    position: absolute;
+    margin-left: 820px;
+    margin-top: 265px;
+    transition: 350ms linear;
+}
+.account_edit_save:hover {
+    filter: drop-shadow(0px 0px 6px rgba(241, 241, 241, 0.9));
+}
+
+@media screen and (max-width: 1300px){
+    .account_edit_permission_input {
+        width: 30em;
+        height: 15em;
+    }
+    .account_edit_save {
+        margin-top: 305px;
+        margin-left: 500px;
+    }
+    #name {
+        height: 450px;
+    }
+}
 @media only screen and (min-width: 1300px) {
     .account {
         width: 90vh;  
