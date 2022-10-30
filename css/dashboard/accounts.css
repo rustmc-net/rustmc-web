@@ -80,10 +80,6 @@
 img {
     pointer-events: none;
 }
-#name {
-    height: 400px;
-    transition: 350ms linear;
-}
 .account_edit_username_input {
     position: absolute;
     color: var(--defaultFontColor);
@@ -153,6 +149,8 @@ img {
     position: absolute;
     margin-left: 820px;
     margin-top: 265px;
+    background: none;
+    border: 0;
     transition: 350ms linear;
 }
 .account_edit_save:hover {

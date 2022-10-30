@@ -36,7 +36,7 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
             </div>
             <div class="accounts">
                 <table>
-                    <!--<php 
+                    <?php
                         require("../../mysql/MySQL.php");
                         $stmt = $mysql->prepare("SELECT * FROM accounts");
                         $stmt->execute();
@@ -65,7 +65,6 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
                             $edit_rank = $name . "_rank";
                             $edit_permission = $name . "_permission";
                             $edit_save = $name . "_save";
-
                             echo "<tr class=\"account\" id=\"$name\">
                             <td><img src=\"https://crafatar.com/avatars/$uuid\" width=\"50px\" alt=\"Minecraft Player Skin\"></td>
                             <td class=\"account_username\">Benutzernamen</td>
@@ -74,15 +73,30 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
                             <td class=\"account_rank_value\">$final_rank</td>
                             <td><a onclick=\"openEdit($name);\" class=\"account_edit\"><img class=\"icon\" src=\"../../assets/img/icons/edit.png\" width=\"30px\"></a></td>
                             <td><a href=\"#delete\" class=\"account_delete\"><img class=\"icon\" src=\"../../assets/img/icons/delete.png\" width=\"30px\"></a></td>
-                            <td class=\"account_edit_username\" id=\"$edit_username\">Benuzernamen<input type=\"text\" class=\"account_edit_username_input\" value=\"$name\"></td>
-                            <td class=\"account_edit_rank\" id=\"$edit_rank\">Rang<input type=\"text\" class=\"account_edit_rank_input\" value=\"$rank_name\"></td>
-                            <td class=\"account_edit_permission\" id=\"$edit_permission\">Rechte<textarea class=\"account_edit_permission_input\">$edit_permission_value</textarea></td>
-                            <td><a href=\"\" class=\"account_edit_save\" id=\"$edit_save\"><img class=\"icon\" src=\"../../assets/img/icons/save.png\" width=\"30px\"></a></td>
-                        </tr>";
-                            echo "<script type=\"text/javascript\"> prepareAccountCSS($name); </script>";
+                            <form action=\"accountsEditSave.php\" id=\"name_form\" method=\"post\">
+                              <td class=\"account_edit_username\" id=\"$edit_username\">Benuzernamen<input name=\"username\" type=\"text\" class=\"account_edit_username_input\" value=\"$name\"></td>
+                              <td class=\"account_edit_rank\" id=\"$edit_rank\">Rang<input name=\"rank\" type=\"text\" class=\"account_edit_rank_input\" value=\"$rank_name\"></td>
+                              <td class=\"account_edit_permission\" id=\"$edit_permission\">Rechte<textarea name=\"permission\" class=\"account_edit_permission_input\">$edit_permission_value</textarea></td>
+                              <td><button type=\"submit\" name=\"submit\" class=\"account_edit_save\" id=\"$edit_save\"><img class=\"icon\" src=\"../../assets/img/icons/save.png\" width=\"30px\"></button></td>
+                            </form>
+                            <style>
+                              #$edit_save {
+                                visibility: hidden;
+                              }
+                              #$edit_permission {
+                                visibility: hidden;
+                              }
+                              #$edit_rank {
+                                visibility: hidden;
+                              }
+                              #$edit_username {
+                                visibility: hidden;
+                              }
+                            </style>
+                            </tr>";
                         }
-                    ?>-->
-                    <tr class="account" id="name">
+                    ?>
+                    <!--<tr class="account" id="name">
                             <td><img src="https://crafatar.com/avatars/aab27bba-5f56-45bc-8b02-d912df5317cd" width="50px" alt="Minecraft Player Skin"></td>
                             <td class="account_username">Benutzernamen</td>
                             <td class="account_username_value">RedCrewTV</td>
@@ -90,10 +104,39 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
                             <td class="account_rank_value"><span class="navbar_profile_rank_unkown">Unbekannt</span></td>
                             <td><a onclick="openEdit($name);" class="account_edit"><img class="icon" src="../../assets/img/icons/edit.png" width="30px"></a></td>
                             <td><a href="#delete" class="account_delete"><img class="icon" src="../../assets/img/icons/delete.png" width="30px"></a></td>
-                            <td class="account_edit_username" id="$edit_username">Benuzernamen<input type="text" class="account_edit_username_input" value="$name"></td>
-                            <td class="account_edit_rank" id="$edit_rank">Rang<input type="text" class="account_edit_rank_input" value="Administrator"></td>
-                            <td class="account_edit_permission" id="$edit_permission">Rechte<textarea class="account_edit_permission_input">$perms</textarea></td>
-                            <td><a href="" class="account_edit_save" id="$edit_save"><img class="icon" src="../../assets/img/icons/save.png" width="30px"></a></td>
+                            <form action="" id="name_form" method="post">
+                              <td class="account_edit_username" id="edit_username">Benuzernamen<input name="username" type="text" class="account_edit_username_input" value="$name"></td>
+                              <td class="account_edit_rank" id="edit_rank">Rang<input name="rank" type="text" class="account_edit_rank_input" value="Administrator"></td>
+                              <td class="account_edit_permission" id="edit_permission">Rechte<textarea name="permission" class="account_edit_permission_input">$perms</textarea></td>
+                              <td><button type="submit" name="submit" class="account_edit_save" id="edit_save"><img class="icon" src="../../assets/img/icons/save.png" width="30px"></button></td>
+                              <php 
+                                if(isset($_POST["submit"])) {
+                                  $stmt = $mysql->prepare("UPDATE ranks SET USERNAME = :username, RANK = :rank, PERMISSIONS = :perms WHERE LOWER(USERNAME) = LOWER($name)");
+                                  $stmt->bindParam(":username", $_POST["username"]);
+                                  $stmt->bindParam(":rank", $_POST["rank"]);
+                                  $stmt->bindParam(":perms", $_POST["permission"]);
+                                  $stmt->execute();
+                                }
+                              ?>-->
+                            </form>
+                            <!--<style>
+                              #edit_save {
+                                visibility: hidden;
+                              }
+                              #edit_permission {
+                                visibility: hidden;
+                              }
+                              #edit_rank {
+                                visibility: hidden;
+                              }
+                              #edit_username {
+                                visibility: hidden;
+                              }
+                              #name {
+                                /*height: 400px;*/
+                                transition: 350ms linear;
+                              }
+                            </style>-->
                     </tr>
                 </div>
                 </table>
