@@ -156,6 +156,141 @@ img {
 .account_edit_save:hover {
     filter: drop-shadow(0px 0px 6px rgba(241, 241, 241, 0.9));
 }
+.add_popup {
+    position: fixed;
+    background-color: var(--backgroundDarkColor);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -2px var(--shadowColor);
+    width: 650px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    margin-top: -225px;
+    margin-left: -325px;
+    z-index: 10;
+    visibility: hidden;
+}
+.add_popup img {
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.add_popup_username {
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+.add_popup_username_input {
+    position: absolute;
+    background: var(--backgroundDarkColor);
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(161, 166, 170);
+    border-color: rgb(161, 166, 170);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    font-size: medium;
+    margin-top: 25px;
+    margin-left: -105px;
+}
+.add_popup_rank {
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 250px;
+}
+.add_popup_rank_input {
+    position: absolute;
+    background: var(--backgroundDarkColor);
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(161, 166, 170);
+    border-color: rgb(161, 166, 170);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    font-size: medium;
+    margin-top: 25px;
+    margin-left: -40px;
+}
+.add_popup_uuid {
+    position: absolute;
+    margin-top: 115px;
+    margin-left: -72px;
+}
+.add_popup_uuid_input {
+    position: absolute;
+    background: var(--backgroundDarkColor);
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(161, 166, 170);
+    border-color: rgb(161, 166, 170);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    font-size: medium;
+    margin-top: 25px;
+    margin-left: -40px;
+    width: 400px;
+}
+.add_popup_discord {
+    position: absolute;
+    margin-top: 180px;
+    margin-left: -75px;
+}
+.add_popup_discord_input {
+    position: absolute;
+    background: var(--backgroundDarkColor);
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(161, 166, 170);
+    border-color: rgb(161, 166, 170);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    font-size: medium;
+    margin-top: 25px;
+    margin-left: -75px;
+    width: 400px;
+}
+.add_popup_permission_input {
+    position: absolute;
+    background: var(--backgroundColor);
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(161, 166, 170);
+    margin-left: -50px;
+    margin-top: 30px;
+    width: 40em;
+    height: 11em;
+    resize: none;
+    transition: 350ms linear;
+}
+.add_popup_permission_input:focus {
+    outline: none;
+}
+.add_popup_permission {
+    position: absolute;
+    margin-top: 240px;
+    margin-left: -75px;
+}
+.add_popup_save {
+    position: absolute;
+    margin-left: 465px;
+    margin-top: 320px;
+    background: none;
+    border: 0;
+    transition: 350ms linear;
+}
+.add_popup_save:hover {
+    filter: drop-shadow(0px 0px 6px rgba(241, 241, 241, 0.9));
+}
+.add_popup_exit {
+    position: absolute;
+    margin-left: 465px;
+    margin-top: -30px;
+    background: none;
+    border: 0;
+    transition: 350ms linear;
+}
+.add_popup_exit:hover {
+    filter: drop-shadow(0px 0px 6px rgba(241, 241, 241, 0.9));
+}
+
 
 @media screen and (max-width: 1300px){
     .account_edit_permission_input {
