@@ -14,12 +14,12 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
     header("Location: ../../");
     exit;
 }
-if(isset($_POST["submit"])) {
 $name = $_COOKIE["currentedituser"];
 
-$stmt = $mysql->prepare("UPDATE accounts SET USERNAME=?, RANK=?, PERMISSIONS=? WHERE LOWER(USERNAME)=LOWER(?)");
-$stmt->execute([$_POST["username"],$_POST["rank"],$_POST["permission"],$name]);
+$stmt = $mysql->prepare("DELETE FROM accounts WHERE LOWER(USERNAME)= LOWER(:username)");
+$stmt->bindParam(":username", $name);
+$stmt->execute();
+
 setcookie("currentedituser", $name, time() + 1 - time(), "/rustmc/web/admin");
-}
 header("Location: accounts.php");
 ?>

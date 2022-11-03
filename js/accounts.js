@@ -17,6 +17,10 @@ function openEdit(username) {
     document.cookie = "currentedituser=" + username.id;
     chached_username = username;
 }
+function gotoDelete(username) {
+    document.cookie = "currentedituser=" + username.id;
+    location.href = "accountsDelete.php";
+}
 function openAddGUI() {
     document.getElementById("add_popup").style.visibility = "visible";
 }
