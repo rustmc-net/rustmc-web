@@ -16,18 +16,9 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
 }
 if(isset($_POST["submit"])) {
 $name = $_COOKIE["currentedituser"];
-$stmt = $mysql->prepare("SELECT * FROM ranks WHERE NAME = :name");
-$stmt->bindParam(":name", $_POST["rank"]);
-$stmt->execute();
-$count = $stmt->rowCount();
-if($count == 1) {
-    $row = $stmt->fetch();
-    $rank_id = $row["ID"];
-}else {
-    $rank_id = 0;
-}
+
 $stmt = $mysql->prepare("UPDATE accounts SET USERNAME=?, RANK=?, PERMISSIONS=? WHERE LOWER(USERNAME)=LOWER(?)");
-$stmt->execute([$_POST["username"],$rank_id,$_POST["permission"],$name]);
+$stmt->execute([$_POST["username"],$_POST["rank"],$_POST["permission"],$name]);
 }
 
 header("Location: accounts.php");

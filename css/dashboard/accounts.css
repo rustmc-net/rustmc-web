@@ -10,6 +10,9 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
+.tool:hover {
+    cursor: context-menu;
+}
 .tool_text{
     position: absolute;
     margin-left: 10px;
@@ -156,6 +159,9 @@ img {
 .account_edit_save:hover {
     filter: drop-shadow(0px 0px 6px rgba(241, 241, 241, 0.9));
 }
+#add_popup {
+    visibility: hidden;
+}
 .add_popup {
     position: fixed;
     background-color: var(--backgroundDarkColor);
@@ -168,7 +174,6 @@ img {
     margin-top: -225px;
     margin-left: -325px;
     z-index: 10;
-    visibility: hidden;
 }
 .add_popup img {
     margin-left: 15px;
@@ -258,7 +263,6 @@ img {
     width: 40em;
     height: 11em;
     resize: none;
-    transition: 350ms linear;
 }
 .add_popup_permission_input:focus {
     outline: none;
@@ -274,7 +278,6 @@ img {
     margin-top: 320px;
     background: none;
     border: 0;
-    transition: 350ms linear;
 }
 .add_popup_save:hover {
     filter: drop-shadow(0px 0px 6px rgba(241, 241, 241, 0.9));
@@ -285,7 +288,6 @@ img {
     margin-top: -30px;
     background: none;
     border: 0;
-    transition: 350ms linear;
 }
 .add_popup_exit:hover {
     filter: drop-shadow(0px 0px 6px rgba(241, 241, 241, 0.9));
