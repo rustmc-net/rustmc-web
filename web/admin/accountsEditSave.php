@@ -20,6 +20,6 @@ $name = $_COOKIE["currentedituser"];
 $stmt = $mysql->prepare("UPDATE accounts SET USERNAME=?, RANK=?, PERMISSIONS=? WHERE LOWER(USERNAME)=LOWER(?)");
 $stmt->execute([$_POST["username"],$_POST["rank"],$_POST["permission"],$name]);
 }
-
+setcookie("currentedituser", $name, time() + 1 - time(), "/rustmc/web/admin");
 header("Location: accounts.php");
 ?>
