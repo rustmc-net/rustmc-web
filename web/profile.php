@@ -13,13 +13,57 @@ if(!isset($_SESSION["username"])){
     <script type="text/javascript" src="../js/theme.js"></script>
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="../css/interface.css">
+    <link rel="stylesheet" href="../css/dashboard/profile.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
   </head>
   <body>
     <div class="content_outside">
         <div class="content">
-            <p>test</p>
+            <table>
+              <tr class="password">
+                <td>
+                <center>
+                <p class="password_header">Passwort ändern</p>
+                  <form action="" method="post">
+                    <p class="password_input_old_header">Aktuelles Passwort</p>
+                    <input type="password" name="pwold" class="password_input_old">
+                    <p class="password_input_new_header">Neues Passwort</p>
+                    <input type="password" name="pwnew" class="password_input_new">
+                    <p class="password_input_check_header">Passwort wiederholen</p>
+                    <input type="password" name="pwnewcheck" class="password_input_check">
+                    <br>
+                    <button type="submit" name="submitpw" class="password_button">Passwort Ändern</button>
+                  </form>
+                  <p class="error"><?php
+            if(isset($_POST["submitpw"])){
+              require("../mysql/MySQL.php");
+              $stmt = $mysql->prepare("SELECT * FROM accounts WHERE LOWER(USERNAME) = LOWER(:username)");
+              $stmt->bindParam(":username", $_SESSION["username"]);
+              $stmt->execute();
+              $count = $stmt->rowCount();
+              if($count == 1) {
+                $row = $stmt->fetch();
+                if(password_verify($_POST["pwold"], $row["PASSWORD"])) {
+                  if($_POST["pwnew"] == $_POST["pwnewcheck"]) {
+                    $stmt = $mysql->prepare("UPDATE accounts SET PASSWORD = :pw WHERE LOWER(USERNAME) = LOWER(:username)");
+                    $stmt->bindParam(":username", $_SESSION["username"]);
+                    $stmt->bindParam(":pw", password_hash($_POST["pwnew"], PASSWORD_BCRYPT));
+                    $stmt->execute();
+                    header("Location: ../");
+                    exit;
+                  } else {
+                    echo "Die Passwörter stimmen nicht überein!";
+                  }
+                } else {
+                  echo "Dein Aktuelles Passwort ist falsch!";
+                }
+              }
+            }
+             ?></p></center>
+                </td>
+              </tr>
+            </table>
         </div>
     </div>
     <div class="navbar">
@@ -105,7 +149,7 @@ if(!isset($_SESSION["username"])){
         </table>
         <table class="navbar_profile_buttons">
           <tr>
-            <td class="navbar_profile_button_first"><a href="profile.php" class="navbar_profile_settings"><img src="../assets/img/icons/menu.png" width="40px" class="icon"></a><span class="notify_profile">1</span></td>
+            <td class="navbar_profile_button_first"><a href="" class="navbar_profile_settings"><img src="../assets/img/icons/menu.png" width="40px" class="icon"></a><span class="notify_profile">1</span></td>
             <td><a href="logout.php" class="logout"><img src="../assets/img/icons/logout.png" width="40px" class="icon"></a></td>
           </tr>
         </table>

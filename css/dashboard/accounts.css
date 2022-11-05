@@ -69,7 +69,7 @@
     transition: 350ms linear;
 }
 .account_edit:hover {
-    filter: drop-shadow(0px 0px 6px rgba(241, 241, 241, 0.9));
+    filter: drop-shadow(0px 0px 6px var(--hoverShadow));
 }
 .account_delete {
     position: absolute;
@@ -78,7 +78,7 @@
     transition: 350ms linear;
 }
 .account_delete:hover {
-    filter: drop-shadow(0px 0px 6px rgba(241, 241, 241, 0.9));
+    filter: drop-shadow(0px 0px 6px var(--hoverShadow));
 }
 img {
     pointer-events: none;
@@ -156,7 +156,7 @@ img {
 }
 .account_edit_save:hover {
     transition: 350ms linear;
-    filter: drop-shadow(0px 0px 6px rgba(241, 241, 241, 0.9));
+    filter: drop-shadow(0px 0px 6px var(--hoverShadow));
 }
 #add_popup {
     visibility: hidden;

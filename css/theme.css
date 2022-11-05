@@ -7,6 +7,7 @@
     --iconInvert: 0;
     --shadowColor: #8f8d8d;
     --hoverColor: rgb(28, 28, 28);
+    --hoverShadow: #6b6b6b;
 }
 .icon {
     filter: invert(var(--iconInvert));

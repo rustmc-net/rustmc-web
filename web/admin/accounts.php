@@ -234,7 +234,7 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
         </table>
         <table class="navbar_profile_buttons">
           <tr>
-            <td class="navbar_profile_button_first"><a href="" class="navbar_profile_settings"><img src="../../assets/img/icons/menu.png" width="40px" class="icon"></a><span class="notify_profile">1</span></td>
+            <td class="navbar_profile_button_first"><a href="../profile.php" class="navbar_profile_settings"><img src="../../assets/img/icons/menu.png" width="40px" class="icon"></a><span class="notify_profile">1</span></td>
             <td><a href="../logout.php" class="logout"><img src="../../assets/img/icons/logout.png" width="40px" class="icon"></a></td>
           </tr>
         </table>

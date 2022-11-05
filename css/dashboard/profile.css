@@ -1,0 +1,129 @@
+.password {
+    background-color: var(--backgroundDarkColor);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -2px var(--shadowColor);
+    width: 350px;
+    height: 400px;
+    margin-top: 40px;
+    align-items: center;
+    padding-top: 20px;
+    position: absolute;
+}
+.password_header {
+    position: absolute;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+}
+.password_input_old {
+    color: var(--defaultFontColor);
+    background: var(--backgroundDarkColor);
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(161, 166, 170);
+    border-color: rgb(161, 166, 170);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    font-size: medium;
+
+    position: absolute;
+    margin-top: 80px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+}
+.password_input_old_header {
+    position: absolute;
+    margin-left: 70px;
+    margin-top: 60px;
+    color: rgb(161, 166, 170);
+}
+.password_input_new {
+    color: var(--defaultFontColor);
+    background: var(--backgroundDarkColor);
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(161, 166, 170);
+    border-color: rgb(161, 166, 170);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    font-size: medium;
+
+    position: absolute;
+    margin-top: 155px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+}
+.password_input_new_header {
+    position: absolute;
+    margin-top: 135px;
+    margin-left: 70px;
+    color: rgb(161, 166, 170);
+}
+.password_input_check {
+    color: var(--defaultFontColor);
+    background: var(--backgroundDarkColor);
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(161, 166, 170);
+    border-color: rgb(161, 166, 170);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    font-size: medium;
+
+    position: absolute;
+    margin-top: 230px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+}
+.password_input_check_header {
+    position: absolute;
+    margin-top: 210px;
+    margin-left: 70px;
+    color: rgb(161, 166, 170);
+}
+.password_button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    background-color: var(--colorFirst);
+    border: 0px;
+    border-radius: 15px;
+    color: #f1f1f1;
+    font-weight: bold;
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+    position: absolute;
+    margin-top: 260px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+}
+.password_button:hover {
+    background-color: var(--colorSecond);
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+}
+.error {
+    position: absolute;
+    margin-top: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+    color: #FA5858;
+}
