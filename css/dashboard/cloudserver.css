@@ -1,0 +1,115 @@
+.server-stats td {
+    background-color: var(--backgroundDarkColor);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -2px var(--shadowColor);
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    vertical-align: top;
+    padding-left: 20px;
+}
+.server-stats-bar-bg {
+    background-color: var(--backgroundColor);
+    height: 15px;
+    width: 230px;
+    position: absolute;
+}
+.server-stats-bar {
+    background: var(--colorFirst);
+    background: linear-gradient(90deg, var(--colorFirst) 0%, var(--colorSecond) 100%);
+    height: 15px;
+    max-width: 230px;
+    min-width: 0px;
+    position: absolute;
+    z-index: 2;
+}
+.server-stats-cpu {
+    margin-left: 300px;
+}
+.server-stats-ram {
+    margin-left: 600px;
+}
+.server-stats-tps {
+    margin-left: 900px;
+}
+
+.server-console {
+    background-color: var(--backgroundDarkColor);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -2px var(--shadowColor);
+    width: 750px;
+    height: 650px;
+    position: absolute;
+    margin-top: 200px;
+}
+.server-console textarea {
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 695px;
+    height: 550px;
+    resize: none;
+    color: #FCFCFD;
+    background-color: rgb(14, 14, 14);
+    border: none;
+    outline: none;
+    font-family: 'Roboto Mono';
+}
+.server-console-input-bg {
+    margin-top: -5px;
+    background-color: rgb(14, 14, 14);
+    margin-left: 25px;
+    width: 699px;
+    height: 30px;
+    position: absolute;
+    
+}
+#server-console-input {
+    color: #FCFCFD;
+    background-color: rgb(14, 14, 14);
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    outline: none;
+    height: 25px;
+    font-size: medium;
+    width: 90%;
+    margin-left: 30px;
+    font-family: 'Roboto Mono';
+}
+#server-console-input-front {
+    position: absolute;
+    font-size: 28px;
+    margin-top: -7px;
+    margin-left: 10px;
+    font-family: 'Roboto Mono';
+}
+.server-control {
+    background-color: var(--backgroundDarkColor);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -2px var(--shadowColor);
+    width: 650px;
+    height: 650px;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 780px;
+}
+
+
+
+
+/*
+    Settings
+*/
+#server-stats-bar-slots {
+    width: 172.5px;
+}
+#server-stats-bar-cpu {
+    width: 172.5px;
+}
+#server-stats-bar-ram {
+    width: 172.5px;
+}
+#server-stats-bar-tps {
+    width: 172.5px;
+}
