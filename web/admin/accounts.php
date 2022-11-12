@@ -75,7 +75,7 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
                             <td><a onclick=\"openEdit($name);\" class=\"account_edit\"><img class=\"icon\" src=\"../../assets/img/icons/edit.png\" width=\"30px\"></a></td>
                             <td><a onclick=\"gotoDelete($name);\" class=\"account_delete\"><img class=\"icon\" src=\"../../assets/img/icons/delete.png\" width=\"30px\"></a></td>
                             <form action=\"accountsEditSave.php\" id=\"name_form\" method=\"post\">
-                              <td class=\"account_edit_username\" id=\"$edit_username\">Benutzernamen<input name=\"username\" type=\"text\" class=\"account_edit_username_input\" value=\"$name\"></td>
+                              <td class=\"account_edit_username\" id=\"$edit_username\">Benutzername<input name=\"username\" type=\"text\" class=\"account_edit_username_input\" value=\"$name\"></td>
                               <td class=\"account_edit_rank\" id=\"$edit_rank\">Rang<select name=\"rank\" class=\"account_edit_rank_input\">";
                               
                               $str_last = "</select></td>

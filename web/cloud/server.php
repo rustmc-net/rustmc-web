@@ -67,6 +67,76 @@ if(!(in_array("dashboard.navbar.developer", $perms) || in_array("*", $perms))) {
 [00:00:00] Bla Bla Bla
 [00:00:00] Bla Bla Bla
 [00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
+[00:00:00] Bla Bla Bla
 [00:00:00] Bla Bla Bla</textarea>
               <form action="" method="post">
                 <span class="server-console-input-bg"><span id="server-console-input-front">»</span><input type="text" name="command" id="server-console-input" placeholder="Befehl hier eingeben..."></span>
@@ -74,7 +144,26 @@ if(!(in_array("dashboard.navbar.developer", $perms) || in_array("*", $perms))) {
               </form>
             </div>
             <div class="server-control">
-
+              <h3>Informationen</h3>
+              <span class="server-control-info">Alles wichtige auf einem Blick</span>
+              <table>
+                <tr>
+                  <td><span class="server-control-header">Server-ID:</span></td>
+                  <td><p>{id}</p></td>
+                </tr>
+                <tr>
+                  <td><span class="server-control-header">Port:</span></td>
+                  <td><p>{port}</p></td>
+                </tr>
+                <tr>
+                  <td><span class="server-control-header">Node:</span></td>
+                  <td><p>{node}</p></td>
+                </tr>
+                <tr>
+                  <td><span class="server-control-header">Gruppe:</span></td>
+                  <td><p>{group}</p></td>
+                </tr>
+              </table>
             </div>
         </div>
     </div>
