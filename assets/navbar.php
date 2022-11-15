@@ -15,7 +15,8 @@
       <table>
         <tr><td class="heading">Allgemeines</td></tr>
         <tr><th><hr></th></tr>
-        <tr><td><img src="/rustmc/assets/img/icons/ticketsystem.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Aufgaben</a></td></tr>
+        <tr><td><img src="/rustmc/assets/img/icons/dashboard.png" width="30px" height="30px" class="icon"></td><td><a href="/rustmc/web/" class="navbar_button">Dashboard</a></td></tr>
+        <tr><td><img src="/rustmc/assets/img/icons/task.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Aufgaben</a></td></tr>
         <tr><td><img src="/rustmc/assets/img/icons/calendar.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Kalender</a></td></tr>
         <tr><td><img src="/rustmc/assets/img/icons/news.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Neuigkeiten</a></td></tr>
       </table>
@@ -30,7 +31,6 @@
           echo '<table>
           <tr><td class="heading">Support</td></tr>
           <tr><th><hr></th></tr>
-          <tr><td><img src="/rustmc/assets/img/icons/ticketsystem.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Tickets</a></td></tr>
           <tr><td><img src="/rustmc/assets/img/icons/flag.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Meldungen</a></td></tr>
         </table>';
         }
@@ -47,7 +47,7 @@
           <tr><td class="heading">Administration</td></tr>
           <tr><th><hr></th></tr>
           <tr><td><img src="/rustmc/assets/img/icons/palette.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Theme</a></td></tr>
-          <tr><td><img src="/rustmc/assets/img/icons/manage_accounts.png" width="30px" height="30px" class="icon"></td><td><a href="admin/accounts.php" class="navbar_button">Accounts</a><span class="notify">1</span></td></tr>
+          <tr><td><img src="/rustmc/assets/img/icons/manage_accounts.png" width="30px" height="30px" class="icon"></td><td><a href="/rustmc/web/admin/accounts.php" class="navbar_button">Accounts</a><span class="notify">1</span></td></tr>
           <tr><td><img src="/rustmc/assets/img/icons/settings.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Einstellungen</a></td></tr>
         </table>';
         }
@@ -93,8 +93,8 @@
         </table>
         <table class="navbar_profile_buttons">
           <tr>
-            <td class="navbar_profile_button_first"><a href="profile.php" class="navbar_profile_settings"><img src="/rustmc/assets/img/icons/menu.png" width="40px" class="icon"></a><span class="notify_profile">1</span></td>
-            <td><a href="logout.php" class="logout"><img src="/rustmc/assets/img/icons/logout.png" width="40px" class="icon"></a></td>
+            <td class="navbar_profile_button_first"><a href="/rustmc/web/profile.php" class="navbar_profile_settings"><img src="/rustmc/assets/img/icons/menu.png" width="40px" class="icon"></a><span class="notify_profile">1</span></td>
+            <td><a href="/rustmc/web/logout.php" class="logout"><img src="/rustmc/assets/img/icons/logout.png" width="40px" class="icon"></a></td>
           </tr>
         </table>
       </div>

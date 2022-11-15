@@ -1,0 +1,70 @@
+.tasks {
+    background-color: var(--backgroundDarkColor);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -2px var(--shadowColor);
+    width: 475px;
+    height: 500px;
+    margin-top: 40px;
+    align-items: center;
+    position: absolute;
+}
+.tasks h2 {
+    padding-left: 30px;
+    padding-top: 10px;
+}
+.tasks table {
+    margin-left: 15px;
+    height: 300px;
+    overflow-y: scroll;
+    vertical-align: top;
+}
+.tasks-content {
+    height: 400px;
+    width: 460px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.tasks ::-webkit-scrollbar {
+    width: 7px;
+}
+.tasks ::-webkit-scrollbar-track {
+    background: rgb(58, 58, 59);
+    border-radius: 10px;
+}
+.tasks ::-webkit-scrollbar-thumb {
+    background: rgb(123, 123, 124);
+    border-radius: 30px;
+}
+.tasks ::-webkit-scrollbar-thumb:hover {
+    background: rgb(169, 169, 170);
+    border-radius: 30px;
+}
+.tasks-task {
+    background-color: var(--backgroundColor);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -2px var(--shadowColor);
+    width: 420px;
+    height: 115px;
+}
+.tasks td {
+    vertical-align: top;
+}
+.tasks-task h4 {
+    padding-left: 15px;
+    padding-top: 15px;
+}
+.tasks-task p {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: -15px;
+    color: var(--hoverColor); 
+    word-wrap: break-word;
+}
+.tasks-task a {
+    padding-left: 5px;
+    color: var(--colorFirst); 
+    transition: 1s;
+}
+.tasks-task a:hover {
+    color: var(--colorSecond); 
+}

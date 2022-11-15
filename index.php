@@ -41,6 +41,7 @@
                 if(password_verify($_POST["password"], $row["PASSWORD"])) {
                   session_start();
                   $_SESSION["username"] = $row["USERNAME"];
+                  $_SESSION["uuid"] = $row["UUID"];
                   header("Location: web");
                 } else {
                   echo "Benutzername oder Passwort ist falsch!";
