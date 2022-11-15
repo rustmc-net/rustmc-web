@@ -1,0 +1,40 @@
+.tasks-author {
+    background-color: var(--backgroundDarkColor);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -2px var(--shadowColor);
+    width: 250px;
+    height: 150px;
+    margin-top: 40px;
+    align-items: center;
+    position: absolute;
+}
+.tasks-author h2 {
+    padding-left: 15px;
+}
+.tasks-author table {
+    padding-left: 15px;
+}
+.tasks-info {
+    background-color: var(--backgroundDarkColor);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -2px var(--shadowColor);
+    width: 650px;
+    height: 300px;
+    margin-top: 225px;
+    align-items: center;
+    position: absolute;
+}
+.tasks-info h2 {
+    padding-left: 15px;
+}
+.tasks-info textarea {
+    margin-left: 15px;
+    width: 605px;
+    height: 220px;
+    resize: none;
+    color: #FCFCFD;
+    background-color: var(--backgroundDarkColor);
+    border: none;
+    outline: none;
+    font-family: 'Roboto Mono';  
+}
