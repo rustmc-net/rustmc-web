@@ -1,0 +1,49 @@
+.sidebar table {
+    margin-top: 75px;
+    margin-left: 40px;
+}
+.sidebar td {
+    padding-bottom: 25px;
+    color: rgb(161, 166, 170);
+}
+.sidebar td:hover {
+    cursor: pointer;
+}
+.selectet {
+    background-color: var(--backgroundDarkColor);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 100px;
+    padding-left: 10px;
+    border-left: 3px solid;
+    border-color: var(--colorFirst);
+    transition: 75ms;
+}
+.unselect {
+    padding-left: 13px;
+}
+.settings-content {
+    background-color: var(--backgroundDarkColor);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -2px var(--shadowColor);
+    width: 1200px;
+    height: 875px;
+    margin-left: 200px;
+    margin-top: -175px;
+}
+.settings-content-inner {
+    padding-top: 25px;
+    padding-left: 25px;
+}
+#settings-content-theme {
+    visibility: hidden;
+    position: absolute;
+}
+#settings-content-ranks {
+    visibility: hidden;
+    position: absolute;
+}
+#settings-content-permissions {
+    visibility: hidden;
+    position: absolute;
+}

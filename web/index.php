@@ -20,9 +20,10 @@ if(!isset($_SESSION["username"])){
   <body>
     <div class="content_outside">
         <div class="content">
-            <div class="tasks">
-              <h2>Deine Aufgaben</h2>
-              <div class="tasks-content">
+          <h1 id="welcome">Willkommen, <?php echo $_SESSION["username"];?>👋</h1>
+          <div class="tasks">
+            <h2>Deine Aufgaben</h2>
+            <div class="tasks-content">
               <table cellspacing="0">
                 <?php 
                   require("../mysql/MySQL.php");
@@ -46,8 +47,8 @@ if(!isset($_SESSION["username"])){
                   
                 ?>
               </table>
-              </div>
             </div>
+          </div>
         </div>
     </div>
     <?php include_once('../assets/navbar.php');?>

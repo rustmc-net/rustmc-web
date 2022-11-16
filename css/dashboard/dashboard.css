@@ -4,9 +4,12 @@
     box-shadow: 5px 5px 10px -2px var(--shadowColor);
     width: 475px;
     height: 500px;
-    margin-top: 40px;
+    margin-top: 20px;
     align-items: center;
     position: absolute;
+}
+#welcome {
+    margin-top: 40px;
 }
 .tasks h2 {
     padding-left: 30px;
