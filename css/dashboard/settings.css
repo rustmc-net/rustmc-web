@@ -5,6 +5,12 @@
 .sidebar td {
     padding-bottom: 25px;
     color: rgb(161, 166, 170);
+    
+}
+.sidebar img {
+    vertical-align: middle;
+    margin-top: -5px;
+    padding-right: 5px;
 }
 .sidebar td:hover {
     cursor: pointer;
@@ -17,7 +23,7 @@
     padding-left: 10px;
     border-left: 3px solid;
     border-color: var(--colorFirst);
-    transition: 75ms;
+    transition: 30ms;
 }
 .unselect {
     padding-left: 13px;
@@ -29,7 +35,7 @@
     width: 1200px;
     height: 875px;
     margin-left: 200px;
-    margin-top: -175px;
+    margin-top: -225px;
 }
 .settings-content-inner {
     padding-top: 25px;
@@ -39,11 +45,77 @@
     visibility: hidden;
     position: absolute;
 }
+#settings-content-theme p {
+    font-family: 'Roboto Mono';
+    font-size: 0.9em;
+    color: rgb(161, 166, 170);
+}
+input[type="color"] {
+	opacity: 0;
+	display: block;
+	width: 75px;
+	height: 25px; 
+	border: none;
+}
+#color-picker-wrapper-primary {
+    width: 75px;
+	height: 25px; 
+}
+#color-picker-wrapper-secondary {
+    width: 75px;
+	height: 25px; 
+}
+.color-secondary {
+    position: absolute;
+    margin-top: -72px;
+    margin-left: 120px;
+}
+.settings-save {
+    height: 35px;
+    width: 115px;
+    font-size: 15px;
+    background-color: var(--colorFirst);
+    border: 0px;
+    border-radius: 15px;
+    color: #f1f1f1;
+    font-weight: bold;
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+}
+.settings-save:hover {
+    background-color: var(--colorSecond);
+}
+#theme-save {
+    margin-top: 20px;
+}
 #settings-content-ranks {
+    visibility: hidden;
+    position: absolute;
+}
+#settings-content-system {
     visibility: hidden;
     position: absolute;
 }
 #settings-content-permissions {
     visibility: hidden;
     position: absolute;
+}
+.tasks-info ::-webkit-scrollbar {
+    width: 7px;
+}
+@media only screen and (max-width: 1750px) {
+    .settings-content {
+        width: 1000px;
+    }
+}
+@media only screen and (max-width: 1540px) {
+    .settings-content {
+        width: 800px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .settings-content {
+        width: 400px;
+    }
 }

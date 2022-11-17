@@ -46,7 +46,6 @@
           echo '<table>
           <tr><td class="heading">Administration</td></tr>
           <tr><th><hr></th></tr>
-          <tr><td><img src="/rustmc/assets/img/icons/palette.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Theme</a></td></tr>
           <tr><td><img src="/rustmc/assets/img/icons/manage_accounts.png" width="30px" height="30px" class="icon"></td><td><a href="/rustmc/web/admin/accounts.php" class="navbar_button">Accounts</a><span class="notify">1</span></td></tr>
           <tr><td><img src="/rustmc/assets/img/icons/settings.png" width="30px" height="30px" class="icon"></td><td><a href="/rustmc/web/admin/settings.php" class="navbar_button">Einstellungen</a></td></tr>
         </table>';

@@ -30,4 +30,4 @@ function readTextFile(file) {
     }
     rawFile.send(null);
     return JSON.parse(allText);
-}
+} 
