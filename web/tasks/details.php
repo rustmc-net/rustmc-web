@@ -75,7 +75,7 @@ if(!isset($_SESSION["username"])){
               </table>
             </div>
             <div class="tasks-worker">
-              <h2>Ersteller</h2>
+              <h2>Bearbeiter</h2>
               <table>
                 <tr>
                   <td><?php
@@ -140,9 +140,8 @@ if(!isset($_SESSION["username"])){
                 $stmt = $mysql->prepare("DELETE FROM tasks WHERE ID = :id");
                 $stmt->bindParam(":id", $_GET["id"]);
                 $stmt->execute();
-                header("Location: ../");
-              }
-            ?>
+                echo '<script>location.href = "../";</script>';
+              }?>
         </div>
     </div>
     <?php include_once('../../assets/navbar.php');?>
