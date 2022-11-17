@@ -43,7 +43,7 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
           <div class="settings-content">
             <div class="settings-content-inner">
               <div id="settings-content-theme">
-                <form action="" method="post">
+                <form action="settingsThemeSave.php" method="post">
                   <p>Primärfarbe</p>
                   <div id="color-picker-wrapper-primary">
 	                  <input type="color" name="primary" value="<?php 
@@ -81,28 +81,6 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
                   <br>
                   <input class="settings-save" name="submit-theme" type="submit" value="Speichern" id="theme-save">
                 </form>
-                <?php
-                  if(isset($_POST["submit-theme"])) {
-                    $primary = $_POST['primary'];;
-                    $secondary = $_POST['secondary'];;
-                    $dark = true;
-
-                    if($_POST["darkmode"] == "lightmode") {
-                      $dark = false;
-                    }
-
-                    $file = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/rustmc/assets/theme/theme.json');
-                    $json = json_decode($file, true);
-
-                    $json['colorFirst'] = $primary;
-                    $json['colorSecond'] = $secondary;
-                    $json['dark'] = $dark;
-                    
-                    $newJsonString = json_encode($json);
-                    file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/rustmc/assets/theme/theme.json', $newJsonString);
-
-                  }
-                ?>
               </div>
               <div id="settings-content-ranks">
                 <p>ranks</p>
