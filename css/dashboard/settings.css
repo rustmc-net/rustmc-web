@@ -45,10 +45,16 @@
     visibility: hidden;
     position: absolute;
 }
-#settings-content-theme p {
+.settings-header {
     font-family: 'Roboto Mono';
     font-size: 0.9em;
     color: rgb(161, 166, 170);
+}
+.settings-header-description {
+    font-family: 'Roboto Mono';
+    font-size: 0.75em;
+    color: rgb(194, 196, 199);
+    margin-top: -10px;
 }
 input[type="color"] {
 	opacity: 0;
@@ -84,6 +90,23 @@ input[type="color"] {
     transition: background-color 500ms linear;
 }
 .settings-save:hover {
+    background-color: var(--colorSecond);
+}
+.settings-reset {
+    height: 35px;
+    width: 115px;
+    font-size: 15px;
+    background-color: var(--colorFirst);
+    border: 0px;
+    border-radius: 15px;
+    color: #f1f1f1;
+    font-weight: bold;
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+    margin-top: 10px;
+}
+.settings-reset:hover {
     background-color: var(--colorSecond);
 }
 #theme-save {

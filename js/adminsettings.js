@@ -25,7 +25,7 @@ function onPageLoad() {
     }
     color_picker_secondary_wrapper.style.backgroundColor = color_picker_secondary.value;
 
-    selectSetting("theme");
+    selectSetting("system");
 }
 
 function selectSetting(id) {

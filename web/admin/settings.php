@@ -44,27 +44,27 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
             <div class="settings-content-inner">
               <div id="settings-content-theme">
                 <form action="settingsThemeSave.php" method="post">
-                  <p>Primärfarbe</p>
+                  <p class="settings-header">Primärfarbe</p>
                   <div id="color-picker-wrapper-primary">
 	                  <input type="color" name="primary" value="<?php 
-                      $file = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/rustmc/assets/theme/theme.json');
+                      $file = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/rustmc/assets/settings/theme.json');
                       $json = json_decode($file, true);
                       echo $json['colorFirst'];
                       ?>" id="color-picker-primary">
                   </div>
                   <div class="color-secondary">
-                    <p>Sekundärfarbe</p>
+                    <p class="settings-header">Sekundärfarbe</p>
                     <div id="color-picker-wrapper-secondary">
 	                    <input type="color" name="secondary" value="<?php 
-                      $file = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/rustmc/assets/theme/theme.json');
+                      $file = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/rustmc/assets/settings/theme.json');
                       $json = json_decode($file, true);
                       echo $json['colorSecond'];
                       ?>" id="color-picker-secondary">
                     </div>
                   </div>
-                  <p>Thema</p>
+                  <p class="settings-header">Thema</p>
                   <span><input type="radio" name="darkmode" value="darkmode" <?php 
-                      $file = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/rustmc/assets/theme/theme.json');
+                      $file = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/rustmc/assets/settings/theme.json');
                       $json = json_decode($file, true);
                       if($json['dark'] == true) {
                         echo "checked";
@@ -72,7 +72,7 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
                       ?>>Dunkel</span>
                   <br>
                   <span><input type="radio" name="darkmode" value="lightmode" <?php 
-                      $file = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/rustmc/assets/theme/theme.json');
+                      $file = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/rustmc/assets/settings/theme.json');
                       $json = json_decode($file, true);
                       if($json['dark'] == false) {
                         echo "checked";
@@ -81,15 +81,28 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
                   <br>
                   <input class="settings-save" name="submit-theme" type="submit" value="Speichern" id="theme-save">
                 </form>
+                <form action="settingsThemeReset.php" method="post">
+                  <input class="settings-reset" name="reset-theme" type="submit" value="Zurücksetzen" id="theme-reset">
+                </form>
               </div>
               <div id="settings-content-ranks">
                 <p>ranks</p>
               </div>
               <div id="settings-content-permissions">
-                <img src="https://atendesigngroup.com/sites/default/files/user-personas-permissions-drupal-8.png" alt="" width="250px">
+                <p>perms</p>
               </div>
               <div id="settings-content-system">
-                <p>ranks</p>
+                <p class="settings-header">Pfad</p>
+                <p class="settings-header-description">Der Pfad zum Webinterface. Default: Leer lassen.</p>
+                <form action="settingsSystemSave.php" method="post">
+                  <input type="text" name="rootpath" id="system-rootpath" value="<?php 
+                      $file = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/rustmc/assets/settings/system.json');
+                      $json = json_decode($file, true);
+                      echo $json['rootpath'];
+                      ?>">
+                  <br><br>
+                  <input class="settings-save" name="submit-system" type="submit" value="Speichern" id="system-save">
+                </form>
               </div>
             </div>
           </div>

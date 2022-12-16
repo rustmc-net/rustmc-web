@@ -1,4 +1,4 @@
-json = readTextFile('/rustmc/assets/theme/theme.json')
+json = readTextFile('/rustmc/assets/settings/theme.json')
 var root = document.querySelector(':root');
 
 if(json.dark) {
