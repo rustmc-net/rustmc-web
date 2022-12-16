@@ -16,7 +16,7 @@
         <tr><td class="heading">Allgemeines</td></tr>
         <tr><th><hr></th></tr>
         <tr><td><img src="/rustmc/assets/img/icons/dashboard.png" width="30px" height="30px" class="icon"></td><td><a href="/rustmc/web/" class="navbar_button">Dashboard</a></td></tr>
-        <tr><td><img src="/rustmc/assets/img/icons/task.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Aufgaben</a></td></tr>
+        <tr><td><img src="/rustmc/assets/img/icons/task.png" width="30px" height="30px" class="icon"></td><td><a href="/rustmc/web/tasks/overview.php" class="navbar_button">Aufgaben</a></td></tr>
         <tr><td><img src="/rustmc/assets/img/icons/calendar.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Kalender</a></td></tr>
         <tr><td><img src="/rustmc/assets/img/icons/news.png" width="30px" height="30px" class="icon"></td><td><a href="" class="navbar_button">Neuigkeiten</a></td></tr>
       </table>
