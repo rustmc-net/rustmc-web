@@ -11,8 +11,8 @@ $stmt->execute();
 $row = $stmt->fetch();
 $perms = explode(",",$row["PERMISSIONS"]);
 if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms))) {
-    header("Location: ../../");
-    exit;
+    $_SESSION["notify"] = true;
+    header("Location: ../");
 }
 if(isset($_POST["submit"])) {
     $stmt = $mysql->prepare("SELECT * FROM accounts WHERE LOWER(USERNAME) = LOWER(:username)");
@@ -35,6 +35,9 @@ if(isset($_POST["submit"])) {
             $stmt->execute();
         }
     }
+}else {
+    $_SESSION["notify"] = true;
+    header("Location: ../");
 }
 
 header("Location: accounts.php");

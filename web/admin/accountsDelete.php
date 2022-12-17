@@ -11,8 +11,8 @@ $stmt->execute();
 $row = $stmt->fetch();
 $perms = explode(",",$row["PERMISSIONS"]);
 if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms))) {
-    header("Location: ../../");
-    exit;
+    $_SESSION["notify"] = true;
+    header("Location: ../");
 }
 $name = $_COOKIE["currentedituser"];
 

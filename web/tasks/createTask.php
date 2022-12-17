@@ -4,6 +4,7 @@ if(!isset($_SESSION["username"])){
   header("Location: ../../");
   exit;
 }
+try {
 require("../../mysql/MySQL.php");
 $stmt = $mysql->prepare("SELECT PERMISSIONS FROM accounts WHERE LOWER(USERNAME) = LOWER(:username)");
 $stmt->bindParam(":username", $_SESSION["username"]);
@@ -36,8 +37,18 @@ if(isset($_POST["submit"])) {
             $stmt->bindParam(":author", $_SESSION["uuid"]);
             $stmt->bindParam(":worker", $_POST["worker"]);
             $stmt->execute();
+            header("Location: overview.php");
+    } else {
+        $_SESSION["notify"] = true;
+        header("Location: ../");
     }
+} else {
+    $_SESSION["notify"] = true;
+    header("Location: ../");
 }
-
-header("Location: overview.php");
+} catch(Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+    $_SESSION["notify"] = true;
+    header("Location: ../");
+}
 ?>

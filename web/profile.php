@@ -58,6 +58,9 @@ if(!isset($_SESSION["username"])){
                 } else {
                   echo "Dein Aktuelles Passwort ist falsch!";
                 }
+              }else {
+                $_SESSION["notify"] = true;
+                header("Location: ../"); 
               }
             }
              ?></p></center>

@@ -11,8 +11,8 @@ $stmt->execute();
 $row = $stmt->fetch();
 $perms = explode(",",$row["PERMISSIONS"]);
 if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms))) {
-    header("Location: ../../");
-    exit;
+  $_SESSION["notify"] = true;
+  header("Location: ../");
 }
 if(isset($_POST["submit"])) {
 $name = $_COOKIE["currentedituser"];
@@ -20,6 +20,9 @@ $name = $_COOKIE["currentedituser"];
 $stmt = $mysql->prepare("UPDATE accounts SET USERNAME=?, RANK=?, PERMISSIONS=? WHERE LOWER(USERNAME)=LOWER(?)");
 $stmt->execute([$_POST["username"],$_POST["rank"],$_POST["permission"],$name]);
 setcookie("currentedituser", $name, time() + 1 - time(), "/rustmc/web/admin");
-}
 header("Location: accounts.php");
+}else {
+  $_SESSION["notify"] = true;
+  header("Location: ../");
+}
 ?>

@@ -18,5 +18,8 @@ if(isset($_POST["submit-theme"])) {
     $newJsonString = json_encode($json);
     file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/rustmc/assets/settings/theme.json', $newJsonString);
     header("Location: settings.php");
+}else {
+    $_SESSION["notify"] = true;
+    header("Location: ../"); 
 }
 ?>
