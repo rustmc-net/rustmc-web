@@ -42,6 +42,7 @@
                   session_start();
                   $_SESSION["username"] = $row["USERNAME"];
                   $_SESSION["uuid"] = $row["UUID"];
+                  $_SESSION["notify"] = false;
                   header("Location: web");
                 } else {
                   echo "Benutzername oder Passwort ist falsch!";

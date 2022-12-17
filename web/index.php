@@ -52,8 +52,19 @@ if(!isset($_SESSION["username"])){
           </div>
           <div class="notifications">
             <table>
-              <tr><td><div class="notify-error"><img src="../assets/img/icons/error.png" width="25px"><div class="notify-text">Entschuldige! Es ist ein Fehler aufgetreten!</div><div class="notify-timeline"></div></div></td></tr>
-              <tr><td><div class="notify-error"><img src="../assets/img/icons/error.png" width="25px"><div class="notify-text">Entschuldige! Es ist ein Fehler aufgetreten!</div><div class="notify-timeline"></div></div></td></tr>
+              <?php 
+                  $notify = $_SESSION["notify"];
+                  if($notify == true) {
+                    echo '<tr><td><div id="notify-error"><img src="../assets/img/icons/error.png" width="25px"><div class="notify-text">Entschuldige! Es ist ein Fehler aufgetreten!</div><div class="notify-timeline"></div></div></td></tr>';
+                    $_SESSION["notify"] = false;
+                  }
+                  
+              ?>
+              <script>
+                setTimeout(function() {
+                  document.getElementById("notify-error").style.visibility = "hidden";
+                }, 1000*5);
+              </script>
             </table>
           </div>
         </div>

@@ -33,7 +33,7 @@
 /*
     Error Notification
 */
-.notify-error {
+#notify-error {
     background-color: rgb(243, 64, 64);
     height: 35px;
     padding-right: 10px;
