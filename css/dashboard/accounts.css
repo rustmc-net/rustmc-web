@@ -10,8 +10,8 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
-.tool:hover {
-    cursor: context-menu;
+.tool:hover > .tool_text {
+    color: var(--defaultFontColor);
 }
 .tool_text{
     position: absolute;
@@ -19,9 +19,6 @@
     margin-top: 7px;
     color: rgb(161, 166, 170);
     transition: 350ms linear;
-}
-.tool_text:hover {
-    color: var(--defaultFontColor);
 }
 .accounts {
     margin-top: 50px;

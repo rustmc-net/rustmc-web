@@ -122,7 +122,7 @@ if(!(in_array("dashboard.navbar.administration", $perms) || in_array("*", $perms
             <div class="add_popup" id="add_popup">
               <table>
                 <tr>
-                  <td><img src="https://crafatar.com/avatars/ec561538-f3fd-461d-aff5-086b22154bce" width="75px"></td>
+                  <td><img src="https://crafatar.com/avatars/<?php echo $_SESSION["uuid"]; ?>" width="75px"></td>
                   <form action="accountsCreate.php" method="post">
                     <td class="add_popup_username">Benutzernamen<input name="username" type="text" class="add_popup_username_input" placeholder="Benutzernamen"></td>
                     <td class="add_popup_rank">Rang

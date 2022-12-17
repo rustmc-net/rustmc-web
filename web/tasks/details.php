@@ -140,7 +140,7 @@ if(!isset($_SESSION["username"])){
                 $stmt = $mysql->prepare("DELETE FROM tasks WHERE ID = :id");
                 $stmt->bindParam(":id", $_GET["id"]);
                 $stmt->execute();
-                echo '<script>location.href = "../";</script>';
+                echo '<script>history.go(-2);</script>';
               }?>
         </div>
     </div>
