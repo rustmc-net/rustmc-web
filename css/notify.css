@@ -1,0 +1,71 @@
+.notifications {
+    position: sticky;
+    z-index: 1000;
+    float: right;
+    font-size: medium;
+    right: 0;
+    padding-right: 0;
+}
+.notifications img {
+    filter: invert(1);
+    position: absolute;
+    margin-left: -30px;
+    margin-top: -3px;
+    pointer-events: none;
+    padding-top: 8px;
+}
+.notifications td {
+    padding-bottom: 40px;
+}
+.notify-timeline {
+    background: rgb(247, 122, 122);
+    width: 115%;    /* 115% = 100% */
+    height: 3px;
+    margin-top: 8px;
+    margin-left: -35px;
+    animation: time 5s linear forwards;
+    
+}
+.notify-text {
+    padding-top: 8px;
+}
+
+/*
+    Error Notification
+*/
+.notify-error {
+    background-color: rgb(243, 64, 64);
+    height: 35px;
+    padding-right: 10px;
+    padding-left: 35px;
+    box-shadow: 5px 5px 10px -2px var(--shadowColor);
+    position: fixed;
+    right: -340px;
+    animation: comeIn 150ms linear forwards;
+}
+
+/*
+    Animations
+*/
+@keyframes time {
+    1% {
+        width: 115%;
+    }
+    99% {
+        width: 1%;
+
+    }
+    100% {
+        visibility: hidden;
+        width: 0%;
+    }
+}
+
+@keyframes comeIn {
+    100% {
+        right: 0px;
+    }
+    0% {
+        right: -340px;
+    }
+}

@@ -13,6 +13,7 @@ if(!isset($_SESSION["username"])){
     <script type="text/javascript" src="../js/theme.js"></script>
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="../css/interface.css">
+    <link rel="stylesheet" href="../css/notify.css">
     <link rel="stylesheet" href="../css/dashboard/dashboard.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -48,6 +49,12 @@ if(!isset($_SESSION["username"])){
                 ?>
               </table>
             </div>
+          </div>
+          <div class="notifications">
+            <table>
+              <tr><td><div class="notify-error"><img src="../assets/img/icons/error.png" width="25px"><div class="notify-text">Entschuldige! Es ist ein Fehler aufgetreten!</div><div class="notify-timeline"></div></div></td></tr>
+              <tr><td><div class="notify-error"><img src="../assets/img/icons/error.png" width="25px"><div class="notify-text">Entschuldige! Es ist ein Fehler aufgetreten!</div><div class="notify-timeline"></div></div></td></tr>
+            </table>
           </div>
         </div>
     </div>

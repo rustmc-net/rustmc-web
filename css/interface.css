@@ -53,6 +53,7 @@ body {
 .content_outside {
   position: absolute;
   margin-left: 300px;
+  width: calc(100% - 300px);
 }
 .content {
   position: relative;
